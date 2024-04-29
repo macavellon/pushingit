@@ -12,19 +12,20 @@ describe ('Desafio2' , () => {
         cy.visit('');
         cy.get('#registertoggle').dblclick();
         cy.get('#user').type(data.login.username);
-        cy.get('#pass').type(data.login.password);
+        cy.xpath('//input[@type="password"]').type(data.login.password);
         cy.get('button[type="submit"]').click();
-        cy.get('#todolistlink').click();
+        cy.contains('a', "To Do List");
+        cy.xpath('//a[text()="To Do List"]').should('exist').click();
         cy.wait(2000);
         cy.get('#removeAll').click();
         cy.wait(3000)
      })
 
     it('1.Ingresar las tareas' , ()=> {
-        cy.get('#task').type(data.tareas.tarea1);
+        cy.xpath('//input[@id="task"]').type(data.tareas.tarea1);
         cy.get('#sendTask').click();
         cy.wait(2000)
-        cy.get('#task').type(data.tareas.tarea2);
+        cy.xpath('//input[@id="task"]').type(data.tareas.tarea2);
         cy.get('#sendTask').click();
         cy.contains('p', data.tareas.tarea2);
         cy.get('#task').type(data.tareas.tarea3);
@@ -61,11 +62,11 @@ describe ('Desafio2' , () => {
     });
 
     it('4.Agregar y borrar tarea1' , ()=> {
-        cy.get('#task').type(data.tareas.tarea1);
+        cy.xpath('//input[@id="task"]').type(data.tareas.tarea1);
         cy.get('#sendTask').click();
         cy.wait(2000)
         cy.get('#task').type(data.tareas.tarea2);
-        cy.get('#sendTask').click();
+        cy.xpath('//button[@id="sendTask"]').click();
         cy.wait(2000)
         cy.contains('p', data.tareas.tarea1).siblings('button').click();
 
