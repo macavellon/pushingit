@@ -3,9 +3,7 @@ describe ('Desafio2' , () => {
     let data;
     before('Before' , () => { 
         cy.fixture("datos").then (dato => {
-            data = dato });
-
-
+        data = dato });
         });
 
     beforeEach('BeforeEach' , () => {
@@ -19,7 +17,7 @@ describe ('Desafio2' , () => {
         cy.wait(2000);
         cy.get('#removeAll').click();
         cy.wait(3000)
-     })
+})
 
     it('1.Ingresar las tareas' , ()=> {
         cy.xpath('//input[@id="task"]').type(data.tareas.tarea1);
@@ -44,7 +42,6 @@ describe ('Desafio2' , () => {
         cy.get('#completed').should('exist');
         cy.get('#active').should('exist');
         cy.get('#removeAll').should('exist');
-
     });
 
     it('3.Agregar y borrar tarea2' , ()=> {
@@ -57,8 +54,6 @@ describe ('Desafio2' , () => {
         cy.contains('p', data.tareas.tarea2).siblings('button').click();
         cy.get('#removeAll').click();
         cy.wait(3000)
-
-
     });
 
     it('4.Agregar y borrar tarea1' , ()=> {
@@ -69,11 +64,5 @@ describe ('Desafio2' , () => {
         cy.xpath('//button[@id="sendTask"]').click();
         cy.wait(2000)
         cy.contains('p', data.tareas.tarea1).siblings('button').click();
-
-        
-
     });
-
-    
-
 })
