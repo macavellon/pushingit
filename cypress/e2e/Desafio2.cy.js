@@ -16,8 +16,8 @@ describe ('Desafio2' , () => {
         cy.xpath('//a[text()="To Do List"]').should('exist').click();
         cy.wait(2000);
         cy.get('#removeAll').click();
-        cy.wait(3000)
-})
+        cy.get('li').should('not.exist');
+    })
 
     it('1.Ingresar las tareas' , ()=> {
         cy.xpath('//input[@id="task"]').type(data.tareas.tarea1);
@@ -66,3 +66,8 @@ describe ('Desafio2' , () => {
         cy.contains('p', data.tareas.tarea1).siblings('button').click();
     });
 })
+
+
+
+//git checkout main para volver a la rama principal o a la que sea cambio main por el nombre
+// git branch nombrederama   // creo una nueva rama, luego tengo que poner git checkout nombrederama para ir a esa rama
