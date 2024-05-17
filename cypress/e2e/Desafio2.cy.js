@@ -71,3 +71,4 @@ describe ('Desafio2' , () => {
 
 //git checkout main para volver a la rama principal o a la que sea cambio main por el nombre
 // git branch nombrederama   // creo una nueva rama, luego tengo que poner git checkout nombrederama para ir a esa rama
+//lalalalalla
