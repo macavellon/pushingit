@@ -1,0 +1,14 @@
+{
+ "productos": { 
+  "primerProducto": {
+    "nombre": "Sweater Rosa",
+    "precioUnitario":14.86,
+    "quantity": 1
+  } ,
+  "segundoproducto": {
+    "nombre": "Buzo Negro",
+    "precioUnitario":23.76,
+    "quantity": 1
+  }
+ }
+}
